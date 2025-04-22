@@ -1,17 +1,18 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Simple CRUD with PHP & MySQL</title>
+    <title>Create Record</title>
 </head>
 <body>
-    <h2>Create User</h2>
+    <h2>Create a New User</h2>
     <form action="create.php" method="POST">
-        <input type="text" name="name" placeholder="Enter Name" required>
-        <input type="email" name="email" placeholder="Enter Email" required>
-        <button type="submit">Create</button>
-    </form>
+        <label>Name:</label><br>
+        <input type="text" name="name" required><br><br>
 
-    <h2>User List</h2>
-    <iframe src="read.php" width="100%" height="300px" style="border:none;"></iframe>
+        <label>Email:</label><br>
+        <input type="email" name="email" required><br><br>
+
+        <input type="submit" value="Submit">
+    </form>
 </body>
 </html>

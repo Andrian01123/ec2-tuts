@@ -1,22 +1,28 @@
 <?php
-$host = 'database-1.c38kuy62qmhp.ap-southeast-1.rds.amazonaws.com'; // Replace with your RDS endpoint
-$db   = 'database-1';                   // The DB name you created
-$user = 'admin';                  // Your RDS master username
-$pass = 'Billion.0513';                  // Your RDS master password
+$host = 'localhost';
+$db = 'testdb';
+$user = 'root';
+$pass = ''; // or your MySQL password
+
+// Connect to database
 $conn = new mysqli($host, $user, $pass, $db);
 
+// Check connection
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-$name  = $_POST['name'];
+// Get POST data
+$name = $_POST['name'];
 $email = $_POST['email'];
 
+// Insert into database
 $sql = "INSERT INTO users (name, email) VALUES ('$name', '$email')";
+
 if ($conn->query($sql) === TRUE) {
-    echo "New record created successfully";
+    echo "New record created successfully!";
 } else {
-    echo "Error: " . $conn->error;
+    echo "Error: " . $sql . "<br>" . $conn->error;
 }
 
 $conn->close();

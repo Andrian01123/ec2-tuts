@@ -1,8 +1,8 @@
 <?php
-$host = 'localhost';
-$db = 'testdb';
-$user = 'root';
-$pass = ''; // or your MySQL password
+$host = 'database-1.c38kuy62qmhp.ap-southeast-1.rds.amazonaws.com';
+$db = 'database-1';
+$user = 'admin';
+$pass = 'Billion.0513'; // or your MySQL password
 
 // Connect to database
 $conn = new mysqli($host, $user, $pass, $db);
